@@ -1,0 +1,43 @@
+// FONT
+$font-family: 'Lato', serif;
+$font-alt: 'Montserrat', sans-serif;
+
+
+
+
+
+
+
+
+// COLOR
+$text-color: #333;
+$primary-color: rgb(250,85,0);
+
+$bg-color: #EEE;
+
+$header-bg: rgb(0, 133, 167);
+
+$card-size-color: #AAA;
+
+
+// Form
+$input-border-color: #DDD;
+$input-border-radius:4px;
+$input-pt:4px;
+$input-px:5px;
+$input-lh:20px;
+$input-font-size:15px;
+$input-min-h: 2 * $input-pt + $input-lh + 2px;
+
+
+
+
+$header-h: 50px;
+
+
+$border-radius:4px;
+
+
+// Media queries
+$break_mobile: 700px;
+$break_tablet: 950px;

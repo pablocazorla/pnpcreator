@@ -1,0 +1,54 @@
+.header{
+  height: $header-h;
+
+  background-color: $header-bg;
+  color:#FFF;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+.header-container{
+  display: flex;
+  align-items: center;
+}
+.header-container-col{
+
+  &.big{
+    flex: 1 0 auto;
+  }
+  
+}
+
+.header-logo{
+  height: $header-h;
+  padding: 5px 15px 5px 0;
+  img{
+    display: block;
+    width: auto;
+    height: 100%;
+  }
+}
+
+.header-user_content{
+  height: $header-h;
+  display: flex;
+  align-items: center;
+}
+
+.header-user_avatar{
+  width: $header-h - 16px;
+  height: $header-h - 16px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.5);
+  img{
+    display: block;
+    width: auto;
+    height: 100%;
+  }
+}

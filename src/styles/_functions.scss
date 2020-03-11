@@ -1,0 +1,56 @@
+@mixin transition($t) {
+  -webkit-transition:$t;
+  -ms-transition:$t;
+  transition:$t;
+}
+
+@mixin transform($t) {
+  -webkit-transform: $t;
+  -ms-transform: $t;
+  transform: $t;
+}
+
+@mixin unwrap{
+  white-space: nowrap;
+}
+
+@mixin noselect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin gradient($a, $b) {
+  background: $a;
+  background: -moz-linear-gradient(left, $a 0%, $b 100%);
+  background: -webkit-linear-gradient(left, $a 0%, $b 100%);
+  background: linear-gradient(to right, $a 0%, $b 100%);
+}
+@mixin gradient-v($a, $b) {
+  background: $a;
+  background: -moz-linear-gradient(top, $a 0%, $b 100%);
+  background: -webkit-linear-gradient(top, $a 0%, $b 100%);
+  background: linear-gradient(to bottom, $a 0%, $b 100%);
+}
+
+@mixin view() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  overflow: hidden;
+
+  &.current{
+    z-index: 12;
+  }
+}
+
+/*
+
+Use:
+@include rtl(float, left, right);
+
+*/

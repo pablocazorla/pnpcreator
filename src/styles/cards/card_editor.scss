@@ -1,0 +1,101 @@
+.card-container{
+  width: 600px;
+  margin: 0 auto;
+  padding: 0 0 30px;
+  position: relative;
+}
+
+.card-container-arrow{
+  position: absolute;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  color:$card-size-color;
+
+
+  &.left{
+    left: -40px;
+  }
+  &.right{
+    right: -40px;
+  }
+}
+.card-container-label{
+  text-align: center;
+  color:$card-size-color;
+  font-size: 14px;
+  line-height: 1;
+  padding-top: 12px;
+}
+
+
+// Card Size
+.card-size-container{
+  position: relative;
+  height: 50px;
+  @include noselect;
+}
+
+.card-size-bar{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+
+  @include transform(translateX(-50%));
+
+  display: flex;
+  align-items: center;
+
+  .card-size-bar-left,
+  .card-size-bar-right{
+    background-color: $card-size-color;
+    flex: 1 0 auto;
+    height: 2px;
+  }
+
+  .card-size-bar_num{
+    color: $card-size-color;
+    font-size: 14px;
+    line-height: 1;
+    padding: 0 0.5em;
+  }
+
+  .card-size-btn{
+    width: 30px;
+    height: 30px;
+   // background-color: rgba(255,0,0,.2);
+    position: absolute;
+    top: -9px;
+    cursor: w-resize;
+
+    &.left{
+      left: -15px;
+    }
+    &.right{
+      right: -15px;
+    }
+    .card-size-btn-indicator{
+      width: 16px;
+      height: 6px;
+      background-color: $card-size-color;
+      position: absolute;
+      left: 7px;
+      top: 12px;
+
+      &:after{
+        content: '';
+        display: block;
+        width: 0;height: 0;
+        border-style: solid;
+        border-width: 8px;
+        border-color: $card-size-color transparent transparent;
+        position: absolute;
+        top: 6px;
+        left: 0;
+      }
+    }
+  }
+}

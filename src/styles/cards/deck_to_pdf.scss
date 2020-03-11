@@ -1,0 +1,33 @@
+.btn-page-orientation{
+  i{
+    @include transition(transform .2s);
+  }
+  i.rotated{
+    @include transform(rotate(90deg));
+  }
+}
+
+
+.deck-to-pdf-page-list{
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 12px;
+  @include transition(max-width .4s);
+
+  &.land{
+    max-width: 98%;
+  }
+}
+
+.deck-to-pdf-page{
+  margin-bottom: 30px;
+}
+.deck-to-pdf-info{
+  font-size: 11px;
+  line-height: 30px;
+}
+
+.deck-to-pdf-page_header{
+  font-size: 14px;
+  margin-bottom: 5px;
+}

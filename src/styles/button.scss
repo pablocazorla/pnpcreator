@@ -1,0 +1,43 @@
+.btn{
+  display: inline-block;
+  padding: 0 1em;
+  height: $input-min-h;
+  line-height: $input-min-h - 2px;
+  text-align: center;
+  border: 1px solid #CCC;
+  border-radius: $border-radius;  
+  cursor: pointer;
+  @include transition(background-color .2s);
+
+  &:hover{
+    background-color: rgba(0,0,0,.08);
+  }
+
+  &.current,&.primary{
+    background-color: $primary-color;
+    color: #FFF;
+    border-color: transparent;    
+  }
+  &.current{
+    cursor: default;
+  }
+
+  &.disabled{
+    opacity: 0.35;
+    cursor: not-allowed;
+    @include transition(opacity .2s);  
+  }
+
+  & + .btn{
+    margin-left: 6px;
+  }
+
+  .fa{
+    margin-right: 5px;
+  }
+}
+
+.btn-icon{
+  width: $input-min-h;
+  padding: 0;
+}

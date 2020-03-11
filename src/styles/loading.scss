@@ -1,0 +1,28 @@
+.loading{
+  max-width: 40px;
+  margin: 0 auto;
+  img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .loading-rot{
+    animation: loadingRot 0.7s linear infinite;
+  }
+
+  &.inline{
+    display: inline-block;
+    margin: auto;
+    vertical-align: middle;
+  }
+}
+
+@keyframes loadingRot {
+  0% {
+    @include transform(rotate(0deg));
+  }
+  100% {
+    @include transform(rotate(360deg));
+  }
+}

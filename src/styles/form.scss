@@ -1,0 +1,46 @@
+.input{
+  border: 1px solid $input-border-color;
+  border-radius: $input-border-radius;
+  padding: $input-pt $input-px 0;
+  font-size: $input-font-size;
+  min-height: $input-min-h;
+  background-color: #fff;
+}
+
+input,select,textarea,button{  
+  width: 100%;
+  line-height: $input-lh;
+  font-size: $input-font-size;
+  font-family: $font-family;
+}
+
+
+
+@mixin placeholder {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.input-group{
+  .input-label,
+  .input{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .input{
+    margin: 0 3px;
+  }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  @include placeholder;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  @include placeholder;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  @include placeholder;
+}
+:-moz-placeholder { /* Firefox 18- */
+  @include placeholder;
+}

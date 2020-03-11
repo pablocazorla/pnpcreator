@@ -1,0 +1,33 @@
+.tab-header{
+  display: flex;
+  align-items: center;
+  height: $header-h;
+  padding: 0 10px;
+
+  .tab-h{
+    height: $header-h;
+    line-height: $header-h;
+    padding: 0 14px;
+    margin-right: 2px;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 4px solid transparent;
+
+    @include transition(all .3s);
+
+    &.current{
+      
+      padding: 0 24px;     
+      font-weight: bold;
+      cursor: default;
+      border-bottom-color: #FFF;
+    }
+  }
+}
+
+.tab-body{
+  $p: 25px;
+  padding-top: $header-h + $p;
+  padding-bottom: $p;
+  min-height: 600px;
+}
