@@ -20,7 +20,18 @@ export const storage = {
   },
   clear: (name) => {
     localStorage.removeItem(name);
-  }
+  },
+  setJSON: (name,value) => {
+    const str = JSON.stringify(value);
+    localStorage.setItem(name, str);    
+  },
+  getJSON: (name) => {
+    const str = localStorage.getItem(name);
+    if(str){
+      return JSON.parse(str);
+    }
+    return undefined;
+  },
 };
 
 // Utils
@@ -61,6 +72,15 @@ const Utils = (function(){
 
   U.mmToPx = function (mm) {
     return Math.round((mm * 300) / 25.4);
+  };
+
+  U.pxToMM = function (px) {
+    return Math.round((px * 25.4) / 300);
+  };
+
+  U.getUniqueId = function(){
+    const timestamp = new Date().getTime();
+    return 'E_' + timestamp;
   };
 
   U.dataURIToBlob = function (dataURI, callback) {

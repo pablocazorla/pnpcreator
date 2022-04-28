@@ -62,11 +62,19 @@ p{
   padding: 28px 16px;
 }
 
+.muted{
+  opacity: 0.5;
+}
+
 
 .canvas-white{
   background-color: #fff;
   width: 100%;
   height: auto;
+  box-shadow: 0 3px 12px rgba(0,0,0,.2);
+}
+.canvas-white-no-restricted{
+  background-color: #fff;
   box-shadow: 0 3px 12px rgba(0,0,0,.2);
 }
 
@@ -84,6 +92,11 @@ p{
 .section-header-col{
   display: flex;
 }
+.section-header-label{
+  line-height: $input-min-h;
+  vertical-align: middle;
+  display: inline-block;
+}
 .section-header-separator{
   width: 1px;
   background-color: #DDD;
@@ -94,14 +107,38 @@ p{
 .row{
   display: flex;
   width: 100%;
-  align-items: center;
-
-  
-
-  
+  align-items: center;  
 
   .col{
     flex: 1 0 auto;
+
+    &.col-50{
+      max-width: 50%;
+      
+      &.first{
+        padding-right: 12px;
+      }
+      &.last{
+        padding-left: 12px;
+      }
+    }
+    &.col-33{
+      max-width: 33.33333333%;
+      
+      &.first{
+        padding-right: 12px;
+      }
+      &.middle{
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+      &.last{
+        padding-left: 12px;
+      }
+    }
+    &.col-70{
+      max-width: 70%;
+    }
   }
 
   &.separated{
@@ -111,3 +148,30 @@ p{
     }
   }
 }
+
+.row-inline{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  //.col{}
+  .separator{
+    width: 1px;
+    height: 12px;
+    background-color: #AAA;
+    margin: 0 7px;
+  }
+}
+
+.tar{
+  text-align: right;
+}
+
+.italic{
+  font-style: italic;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: $font-alt;
+}
+
+

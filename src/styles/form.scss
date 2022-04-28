@@ -14,11 +14,24 @@ input,select,textarea,button{
   font-family: $font-family;
 }
 
+input[type=color]{
+  width: 20px;
+}
+input[type=checkbox]{
+  width: auto;
+}
+
+.input-range{
+  height: $input-min-h;
+  padding: 5px 6px 0;
+}
+
 
 
 @mixin placeholder {
   opacity: 0.5;
   font-style: italic;
+  color:inherit;
 }
 
 .input-group{

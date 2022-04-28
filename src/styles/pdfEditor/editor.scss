@@ -1,0 +1,411 @@
+.pdfeditorpanel{
+  position: fixed;
+  z-index: 2000;
+  top: 200px;
+  right: 80px;
+  width: 360px;
+  background-color: $ef-bg-color;
+  color: $ef-color;
+  border-radius:$ef-border-radius;
+  font-size: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.4);
+  border: 1px solid rgba(255,255,255,.6);
+
+  @include noselect;
+
+  p,h2{
+    margin: 0 0 15px;
+  }
+
+  h2,h3{    
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  h3{
+    font-size: 80%;
+    border-bottom: 1px dotted rgba(255,255,255,.4);
+    padding: 10px 0 4px;
+    margin-bottom: 10px;
+  }
+  h4{
+    font-size: 80%;
+    width: 33%;
+    padding: 10px 0 4px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted rgba(255,255,255,.3);
+  }
+
+  hr{
+    border:none;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 15px;
+  }
+}
+
+.pdfeditorpanel_header{
+  line-height: 30px;
+  padding: 0 $ef-padding;
+  background-color: rgba(0,0,0,.5);
+  border-radius: $ef-border-radius $ef-border-radius 0 0;
+  overflow: hidden;
+  font-weight: bold;
+  cursor:move;
+  
+  @include unwrap;
+}
+.pdfeditorpanel_title{
+  font-family: $font-alt;
+}
+.pdfeditorpanel_subtitle{
+  display: inline-block;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  line-height: 1;
+  color:rgba(255, 255, 255, 0.7);
+}
+.pdfeditorpanel_bottom_head{
+  display: flex;
+  align-items: center;
+  line-height: 30px;
+  background-color: rgba(0,0,0,.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+  .pdfe_bh_btn{
+    flex: 1 0 auto;
+    text-align: center;
+    padding: 0 1em;
+    cursor: pointer;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    @include transition(background-color 0.2s);
+
+    input{
+      margin-right: 5px;
+    }
+    .fa{
+      margin-right: 5px;
+    }
+
+    &.delete{
+      color: #ffa7a7;
+    }
+
+    &:first-child{
+      border-left: none;
+    }
+
+    &:hover{
+      background-color: rgba($primary-color,.16);
+    }
+  }
+
+
+}
+.pdfeditorpanel_body{
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 86vh;
+}
+.pdfeditorpanel_body-container{
+  padding: $ef-padding;
+}
+
+.pdfeditorpanel_sizer{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background-color: rgba(94, 180, 255, 0.8);
+  border-radius: 4px;
+  cursor: w-resize;
+  opacity: 0;
+
+  @include transition(opacity .1s);
+
+
+  &.left{
+    left: -4px;
+  }
+  &.right{
+    right: -4px;
+  }
+
+  &:hover{
+    opacity: 1;
+  }
+}
+
+.pdfeditorpanel-editor__no-selected{
+  text-align: center;
+}
+
+.pdfeditorpanel-editor__form{
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  
+  &,input,select,datalist,textarea{
+    font-size: 12px;
+    line-height: 1;
+  }
+  .pdfeditorpanel-editor__form-label{
+    text-align: right;
+   // width: 50%;
+    @include unwrap;
+  }
+  .pdfeditorpanel-editor__form-input{    
+    background-color: rgba(0, 0, 0, 0.315);
+    padding: 3px;
+    margin: 0 3px 0 5px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+    input,select,option{
+      text-align: center;
+    }
+    
+    select{
+      cursor: pointer;
+      option{
+        color:#333;
+      }
+    }
+    &.for-select{
+      flex: 1 0 auto;
+      position: relative;
+      &:after{
+        content:'';
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 4px;
+        border-color: #EEE transparent transparent;
+        position: absolute;
+        top: 8px;
+        right: 6px;
+      }
+    }
+  }
+
+  &.for-textarea{
+    display: block;
+    .pdfeditorpanel-editor__form-label{
+      text-align: left;
+      margin-bottom: 5px;
+      padding-top: 5px;
+    }
+    .pdfeditorpanel-editor__form-input{
+      margin: 0 0 15px;
+    }
+    textarea{
+      min-height: 90px;
+      resize: vertical;
+    }
+  }
+}
+
+.pdfeditorpanel-editor__editor{
+  .row{
+    margin-bottom: 10px;
+  }
+}
+
+
+// FAVORITES
+.pdfeditorpanel-editor__favorites{
+  position: relative;
+  
+  h3{
+    position: relative;
+  }
+
+  .pdfed-fav_star{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    line-height: 25px;
+    height: 38px;
+    text-align: center;
+    border-radius: 6px 6px 0 0;
+   // 
+    font-size: 16px;
+    color: rgb(255, 196, 0);
+    cursor: pointer;
+
+    &:hover{
+      color: rgb(255, 232, 23);
+    }
+  }
+
+
+  .pdfed-fav_panel{
+    background-color: #222;
+    border-radius: 5px 0 5px 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: none;
+  }
+
+  .pdfed-fav_create{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .pdfed-fav_create-input{
+    flex: 1 0 auto;
+    background-color: rgba(255,255,255,.2);
+    padding: 1px 10px;
+    
+    border-radius: $border-radius; 
+    input{
+      font-size: 12px;
+    }
+  }
+
+  .pdfed-fav_create-btn{
+    padding-left: 5px;
+  }
+
+
+  .pdfed-fav_list{
+    border-top: 1px solid rgba(255,255,255,.2);
+  }
+
+  .pdfed-fav_list-item{
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    position: relative;
+    line-height: 28px;
+    cursor: pointer;
+  }
+
+  .pdfed-fav_list-empty{
+    text-align: center;
+    font-style: italic;
+    padding: 10px 0 0;
+    opacity: 0.5;
+  }
+
+  .pdfed-fav_list-label{
+    margin-right: 30px;
+    padding: 0 8px;
+    color: #CCC;
+    @include unwrap;
+    overflow: hidden;
+
+    .fa{
+      margin-right: 5px;
+    }
+
+    &:hover{
+      color: #FFF;
+    }
+  }
+
+  .pdfed-fav_list-delete{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 28px;
+    text-align: center;
+    color:#D00;
+    &:hover{
+      color: rgb(255, 129, 129);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  &.opened{
+    .pdfed-fav_star{
+      background-color: #222;
+    }
+    .pdfed-fav_panel{
+      display: block;
+    }
+  }
+}
+
+.pdfeditorpanel-editor__imageList{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding-top: 25px;
+}
+.pdfeditorpanel-editor__image-cancel{
+  position: absolute;
+  top: -12px;
+  left: 15px;
+  line-height: 30px;
+  color:#F99;
+  cursor: pointer;
+  &:hover{
+    color:rgb(255, 221, 221);
+  }
+}
+.pdfeditorpanel-editor__imageList-item{
+  width: 50%;
+  padding: 0 15px;
+  text-align: center;
+  margin-bottom: 20px;
+
+
+  .pdfeditorpanel-editor__imageList-item-img-cont{
+    width: 100%;
+    height: 0;
+    padding: 0 0 100%;
+    position: relative;
+    overflow: hidden;
+    
+    background: rgba(0, 0, 0, 0.2) url('../../assets/images/bg-img.gif') center;
+    margin-bottom: 2px;
+    cursor: pointer;
+    border-radius: 3px;
+
+    img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      @include transform(translateX(-50%) translateY(-50%));
+
+
+      width: auto;
+      height: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    &.selected{
+      box-shadow: 0 0 0 3px $ef-bg-color, 0 0 0 8px $primary-color;
+    }
+    
+    // &:hover{
+    //   box-shadow: 0 2px 6px 2px rgba(0,0,0,.7);
+    // }
+  }
+}

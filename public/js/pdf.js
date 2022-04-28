@@ -27,9 +27,9 @@ var listColorVoid = {
   // 'RGB(233,192,109)': 'RGB(219,219,219)'
 };
 
-var withText = true;
-var withImages = false;
-var withBG = false;
+var withText = false;
+var withImages = true;
+var withBG = true;
 
 //var texto = '';
 

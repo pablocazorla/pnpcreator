@@ -35,9 +35,17 @@
   .fa{
     margin-right: 5px;
   }
+
+  &.min{
+    height: 0.7 * $input-min-h;
+    line-height: 0.7 * $input-min-h - 2px;
+  }
 }
 
 .btn-icon{
   width: $input-min-h;
   padding: 0;
+  .fa{
+    margin-right: 0;
+  }
 }

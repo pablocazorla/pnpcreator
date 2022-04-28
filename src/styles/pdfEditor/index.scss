@@ -1,0 +1,87 @@
+// Header
+.pdf-editor-current_page_box {
+  padding: 0 5px;
+  .section-header-label{
+    padding: 0 5px;
+  }
+
+  &.disabled{
+    opacity: .3;
+  } 
+}
+
+// Page
+.pdf-editor-page-list{
+  width: 95%;
+  margin: 0 auto;
+}
+.pdf-editor-page{
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+
+  .loading{
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 25;
+  }
+}
+
+.pdf-editor-page_wrap{
+  margin-bottom: 25px;
+}
+.pdf-editor-page_header{
+  padding: 0 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.link-hidden{
+  overflow: hidden;
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.pdf-editor-page_canvas{
+  position: relative;
+  transform-origin: top left;
+
+  @include transition(transform .2s);
+}
+.canvas-white-no-restricted,
+.pdf-editor-canvas-edition-container{
+  margin: 15px;
+}
+
+
+.pdf-editor-canvas-edition-container{
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;  
+
+  &.mode-create{
+    cursor: crosshair;
+  }
+  &.hidden{
+    opacity: 0;
+  }
+}
+
+.canvas-pdf{
+  position: relative;
+  z-index: 2;
+}
+.canvas-composite{
+  position: absolute;
+  z-index: 1;
+  top: 15px;
+  left: 15px;
+  opacity: 0;
+}
+
+@import 'editor';
